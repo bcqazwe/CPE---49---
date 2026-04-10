@@ -25,6 +25,7 @@
 2. 即使 sum >= sub，仍要檢查整除 2，否則會得到小數分數。
 3. x 或 y 出現負數也要判定 impossible，避免輸出不合理比分。
 4. 雖然理論上 x >= y，但程式最後再做一次大小比較輸出，可提高穩健性。
+5.使用long long int
 */
 int main()
 {
@@ -36,13 +37,13 @@ int main()
     while(time--)
     {
         /* sum: 總分, sub: 分差 */
-        int sum, sub;
+        long long int sum, sub;
 
-        scanf("%d %d", &sum, &sub);
+        scanf("%lld %lld", &sum, &sub);
 
         /* 由聯立方程直接求兩隊分數 */
-        int x = (sum + sub) / 2;
-        int y = (sum - sub) / 2;
+        long long int x = (sum + sub) / 2;
+        long long int y = (sum - sub) / 2;
 
         /*
          * 兩隊分數 < 0，或無法整除 2（會是小數）都屬於不可能
@@ -57,7 +58,7 @@ int main()
         /* 依題目需求輸出較大分數在前 */
         if(x > y)
         {
-            printf("%d %d\n", x, y);
+            printf("%lld %lld\n", x, y);
         }
         else
         {
