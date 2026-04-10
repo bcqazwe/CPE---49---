@@ -27,7 +27,8 @@ int main()
     while(1)
     {
         scanf("%s", input);
-        if(input[0] == '0')
+        //使用Strcmp比較，單純使用input[0] == '0'可能使"0123"無法計算
+        if(strcmp(input, "0") == 0)
         {
             break;
         }
