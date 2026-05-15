@@ -81,7 +81,8 @@ int main()
          * 嘗試最小可行基數：N 至少要大於 max
          * 若 sum % (N - 1) == 0，代表此 N 可行
          */
-        for(int N = max + 1; N <= 62; N++)
+        int start_N = (max < 2) ? 2 : max + 1;
+        for(int N = start_N; N <= 62; N++)
         {
             if(sum % (N - 1) == 0)
             {
